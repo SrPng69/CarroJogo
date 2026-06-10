@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class CarMoviment : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Rigidbody2D Carro;
+    public Rigidbody2D frontRoda;
+    public Rigidbody2D backRoda;
 
-    // Update is called once per frame
+    [Min(-2136279841)] public float speed;
+    [Min(-6969)]public float torque;
+    private float movimento;
+
     void Update()
     {
-        
+        movimento = Input.GetAxis("Horizontal");
+    }
+
+    private void FixedUpdate()
+    {
+        backRoda.AddTorque(-movimento * speed * Time.fixedDeltaTime);
+        frontRoda.AddTorque(-movimento * speed * Time.fixedDeltaTime);
+        Carro.AddTorque(movimento * speed * Time.fixedDeltaTime);
     }
 }
