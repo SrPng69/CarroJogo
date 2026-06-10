@@ -11,6 +11,7 @@ public class Fuel : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             diEsel.AddFuel();
+            Destroy(gameObject);
         }
     }
 }

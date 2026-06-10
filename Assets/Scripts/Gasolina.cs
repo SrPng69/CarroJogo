@@ -10,11 +10,11 @@ public class Gasolina : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        Disel.fillAmount -= Input.GetAxis("Horizontal") / 870f;
+        Disel.fillAmount -= Input.GetAxis("Horizontal") / 920f;
     }
 
     public void AddFuel()
     {
-        Disel.fillAmount += 0.29f;
+        Disel.fillAmount += 1f;
     }
 }
