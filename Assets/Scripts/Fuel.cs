@@ -14,4 +14,12 @@ public class Fuel : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            diEsel.AddFuel();
+        }
+    }
+
 }
